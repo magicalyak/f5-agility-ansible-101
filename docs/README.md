@@ -20,8 +20,8 @@ Login information for the BIG-IP:
 ## Section 1 - Ansible F5 Basic Exercises
 
  - [Exercise 1.0 - Exploring the lab environment](1.0-explore)  
- - [Exercise 1.1 - Using Ansible to gather data from F5 BIG-IP](1.1-get-facts)  
- - [Exercise 1.2 - Adding nodes to F5 BIG-IP](1.2-add-node)  
+ - [Exercise 1.1 - Using Ansible to gather data from F5 BIG-IP](1.1-get-facts/README.md)  
+ - [Exercise 1.2 - Adding nodes to F5 BIG-IP](1.2-add-node/README.html)  
  - [Exercise 1.3 - Adding a load balancing pool](1.3-add-pool)  
  - [Exercise 1.4 - Adding members to a pool](1.4-add-pool-members)  
  - [Exercise 1.5 - Adding a virtual server](1.5-add-virtual-server)  
