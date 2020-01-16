@@ -1,6 +1,6 @@
 # Exercise 1.5: Using the bigip_virtual_server module
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -157,4 +157,4 @@ Instead of using a browser window it is also possible to use the command line on
 ```
 
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

@@ -1,6 +1,6 @@
 # Exercise 3.1 - Operational Change with AS3
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -106,4 +106,4 @@ Login to the F5 with your web browser to see what was configured.  Grab the IP i
 
 ----
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

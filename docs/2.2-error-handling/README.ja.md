@@ -1,6 +1,6 @@
 # 演習 2.2 - モジュールの組み合わせを使用して適切なロールバックを実行する
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -73,7 +73,7 @@ BIG-IPで設定のロールバックを実行するためのさまざまなモ�
 
 ## Step 4
 
-次に、`block` 句とタスクを追加します。タスク[演習 1.2 - F5 BIG-IPへノードを追加](../1.2-add-node/README.ja.md) で実行した `bigip_node` です。
+次に、`block` 句とタスクを追加します。タスク[演習 1.2 - F5 BIG-IPへノードを追加](../1.2-add-node/README.ja.html) で実行した `bigip_node` です。
 
 {% raw %}
 ``` yaml
@@ -107,7 +107,7 @@ BIG-IPで設定のロールバックを実行するためのさまざまなモ�
 
 ## Step 5
 
-次に、 [演習 1.3 - プールの追加](../1.3-add-pool/README.ja.md) で利用された`bigip_pool` のタスクを追加します。
+次に、 [演習 1.3 - プールの追加](../1.3-add-pool/README.ja.html) で利用された`bigip_pool` のタスクを追加します。
 
 {% raw %}
 ```yaml
@@ -148,7 +148,7 @@ BIG-IPで設定のロールバックを実行するためのさまざまなモ�
 
 ## Step 6
 
-次タスクでは [演習 1.4 - メンバーをプールへ追加](../1.4-add-pool-members/README.ja.md) で説明した `bigip_pool_member` を使用します。
+次タスクでは [演習 1.4 - メンバーをプールへ追加](../1.4-add-pool-members/README.ja.html) で説明した `bigip_pool_member` を使用します。
 
 {% raw %}
 ```yaml
@@ -199,7 +199,7 @@ BIG-IPで設定のロールバックを実行するためのさまざまなモ�
 
 ## Step 7
 
-次に[演習 1.5 - Virtual Server の追加](../1.5-add-virtual-server/README.ja.md)で使用した `bigip_virtual_server` タスクを追加します。
+次に[演習 1.5 - Virtual Server の追加](../1.5-add-virtual-server/README.ja.html)で使用した `bigip_virtual_server` タスクを追加します。
 
 {% raw %}
 ```yaml
@@ -261,7 +261,7 @@ BIG-IPで設定のロールバックを実行するためのさまざまなモ�
 
 ## Step 7
 
-次に、**rescue** 句を追加します。`rescue` 句に配置されるタスクは、 [演習 2.1 - コンフィグの削除](2.1-delete-configuration/README.ja.md) と同じです。ノードとプールを削除するとすべての構成が削除されるため、`bigip_pool_member` タスクを再入力する必要はありません。**block** 内のいずれかのタスクが失敗すると、**rescue** が順番に実行されます。VIP、プール、およびノードは適切に削除されます。
+次に、**rescue** 句を追加します。`rescue` 句に配置されるタスクは、 [演習 2.1 - コンフィグの削除](2.1-delete-configuration/README.ja.html) と同じです。ノードとプールを削除するとすべての構成が削除されるため、`bigip_pool_member` タスクを再入力する必要はありません。**block** 内のいずれかのタスクが失敗すると、**rescue** が順番に実行されます。VIP、プール、およびノードは適切に削除されます。
 
 {% raw %}
 ```yaml
@@ -490,4 +490,4 @@ f5                         : ok=8    changed=6    unreachable=0    failed=1
 
 完成したPlaybookのサンプルは [bigip-error-handling.yml](./bigip-error-handling.yml) から参照できます。
 
-本演習は終了です。 [Click here to return to the lab guide](../README.ja.md)
+本演習は終了です。 [Click here to return to the lab guide](../README.ja.html)

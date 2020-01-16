@@ -1,6 +1,6 @@
 # 演習 3.1 - AS3 による変更運用
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -109,4 +109,4 @@ Webブラウザを使用してF5にログインし、設定内容を確認しま
 
 ----
 
-本演習は終了です。[Click here to return to the lab guide](../README.ja.md)
+本演習は終了です。[Click here to return to the lab guide](../README.ja.html)

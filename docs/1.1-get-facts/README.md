@@ -1,6 +1,6 @@
 # Exercise 1.1: Using the bigip_device_info module
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -346,4 +346,4 @@ ansible-playbook bigip-facts.yml --skip-tags=debug
 
 The Ansible Playbook will only run three tasks, skipping the `DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION` task.
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

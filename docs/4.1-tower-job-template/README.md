@@ -272,4 +272,4 @@ You have successfully demonstrated
 
 You have completed lab exercise 4.1
 
-[Click here to return to the Ansible Network Automation Workshop](../README.md)
+[Click here to return to the Ansible Network Automation Workshop](../README.html)

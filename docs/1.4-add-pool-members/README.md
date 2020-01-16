@@ -1,6 +1,6 @@
 # Exercise 1.4: Adding members to a pool on F5
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -261,4 +261,4 @@ The pool will now show two members (host1 and host2).  Click on Local Traffic-> 
 ![f5members](poolmembers.png)
 
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

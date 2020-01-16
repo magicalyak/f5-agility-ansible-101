@@ -1,6 +1,6 @@
 # Exercise 3.2 - Deleting a Web Application
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -106,4 +106,4 @@ The finished Ansible Playbook is provided here for an Answer key.  Click here: [
 Login to the web UI and make sure the `Partition` is removed.
 
 --
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

@@ -1,11 +1,17 @@
 # Exercise 1.7: Using the bigip_config module
 
-**Read this in other languages**: ![uk](../../../images/uk.png) [English](README.md),  ![japan](../../../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../../../images/uk.png) [English](README.html),  ![japan](../../../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
+- [Exercise 1.7: Using the bigip_config module](#exercise-17-using-the-bigipconfig-module)
+  - [Table of Contents](#table-of-contents)
 - [Objective](#objective)
 - [Guide](#guide)
+  - [Step 1:](#step-1)
+  - [Step 2:](#step-2)
+  - [Step 3](#step-3)
+  - [Step 4](#step-4)
 - [Playbook Output](#playbook-output)
 - [Solution](#solution)
 
@@ -109,4 +115,4 @@ f5                         : ok=1    changed=1    unreachable=0    failed=0
 
 The finished Ansible Playbook is provided here for an Answer key.  Click here: [bigip-config.yml](https://github.com/network-automation/linklight/blob/master/exercises/ansible_f5/1.7-save-running-config/bigip-config.yml).
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

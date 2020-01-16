@@ -1,6 +1,6 @@
 # 演習 1.2 - ノードの追加
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -125,4 +125,4 @@ BIG-IP へのログイン情報:
 画面左のメニューからノード一覧が確認できます。Local Traffic -> Nodes とクリックします。
 ![f5web](nodes.png)
 
-これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.md)
+これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.html)

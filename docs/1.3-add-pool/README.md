@@ -1,6 +1,6 @@
 # Exercise 1.3 - Adding a load balancing pool
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -123,4 +123,4 @@ Login information for the BIG-IP:
 The load balancer pool can be found by navigating the menu on the left.  Click on Local Traffic-> then click on Pools.
 ![f5pool](pool.png)
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

@@ -1,6 +1,6 @@
 # 演習 1.1 - Ansible による F5 BIG-IP の情報収集
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -302,4 +302,4 @@ ansible-playbook bigip-facts.yml --skip-tags=debug
 
 `DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION` タスクがスキップされ、３つのタスクの結果が表示されたはずです。
 
-本演習は終了です。  [Click here to return to the lab guide](../README.ja.md)
+本演習は終了です。  [Click here to return to the lab guide](../README.ja.html)

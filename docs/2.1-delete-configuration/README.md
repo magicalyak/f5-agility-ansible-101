@@ -1,6 +1,6 @@
 # Exercise 2.1: Using a combination of modules to delete configuration on the BIG-IP
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -70,7 +70,7 @@ tasks:
 
 ## Step 4
 
-Next, add the first `task` using the [bigip_virtual_server](https://docs.ansible.com/ansible/latest/modules/bigip_virtual_server_module.html).  This task will be identical to [Exercise 1.5 - Adding a virtual server](../1.5-add-virtual-server/README.md) with an additional **state** parameter.  The `state: absent` will remove the configuration from the F5 BIG-IP load balancer.
+Next, add the first `task` using the [bigip_virtual_server](https://docs.ansible.com/ansible/latest/modules/bigip_virtual_server_module.html).  This task will be identical to [Exercise 1.5 - Adding a virtual server](../1.5-add-virtual-server/README.html) with an additional **state** parameter.  The `state: absent` will remove the configuration from the F5 BIG-IP load balancer.
 
 {% raw %}
 ``` yaml
@@ -91,7 +91,7 @@ Next, add the first `task` using the [bigip_virtual_server](https://docs.ansible
 
 ## Step 5
 
-Next, add the second `task` using the [bigip_pool](https://docs.ansible.com/ansible/latest/modules/bigip_pool_module.html).  This task will be identical to [Exercise 1.3 - Adding a load balancing pool](../1.3-add-pool/README.md) with an additional **state** parameter set to `absent`.
+Next, add the second `task` using the [bigip_pool](https://docs.ansible.com/ansible/latest/modules/bigip_pool_module.html).  This task will be identical to [Exercise 1.3 - Adding a load balancing pool](../1.3-add-pool/README.html) with an additional **state** parameter set to `absent`.
 
 {% raw %}
 ```yaml
@@ -209,4 +209,4 @@ Navigate the menu on the left and view that the configuration has been deleted
 
 You have finished this exercise.  
 
-[Click here to return to the lab guide](../README.md)
+[Click here to return to the lab guide](../README.html)

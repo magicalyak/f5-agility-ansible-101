@@ -1,6 +1,6 @@
 # 演習 1.6 - iRules の追加と Virtual Server へのアタッチ
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -207,4 +207,4 @@ BIG-IP へのログイン情報:
 Virtual Server の詳細の確認は、Local Traffic-> Virtual Servers とクリックし 'resoruces' タブを参照することで、iRulesがVirtual Serverにアタッチされていることが確認できます。
 ![irules](bigip-irule.png)
 
-これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.md)
+これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.html)

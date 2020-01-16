@@ -1,6 +1,6 @@
 # 演習 1.5 - Virtual Server の追加
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -155,4 +155,4 @@ Virtual Serverは画面左のメニューから辿ることで確認できます
 ```
 
 
-これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.md.md)
+これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.html.html)

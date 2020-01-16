@@ -1,6 +1,6 @@
 # 演習 1.7 - コンフィグの保存
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -108,4 +108,4 @@ f5                         : ok=1    changed=1    unreachable=0    failed=0
 
 完成したPlaybookのサンプルは [bigip-config.yml](./bigip-config.yml) から参照できます。
 
-本演習は終了です。   [Click here to return to the lab guide](../README.ja.md)
+本演習は終了です。   [Click here to return to the lab guide](../README.ja.html)

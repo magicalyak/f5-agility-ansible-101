@@ -1,6 +1,6 @@
 # Exercise 1.2 - Adding nodes to F5 BIG-IP
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -122,4 +122,4 @@ Login information for the BIG-IP:
 The list of nodes can be found by navigating the menu on the left.  Click on Local Traffic-> then click on Nodes.
 ![f5web](nodes.png)
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

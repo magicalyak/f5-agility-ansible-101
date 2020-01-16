@@ -1,6 +1,6 @@
 # Exercise 2.2: Using a combination of modules to perform a graceful rollback
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -73,7 +73,7 @@ tasks:
 
 ## Step 4
 
-Next, add the `block` stanza and the first `task`. The first task will be the bigip_node as performed in [Exercise 1.2 - Adding nodes to F5 BIG-IP](../1.2-add-node/README.md).
+Next, add the `block` stanza and the first `task`. The first task will be the bigip_node as performed in [Exercise 1.2 - Adding nodes to F5 BIG-IP](../1.2-add-node/README.html).
 
 {% raw %}
 ``` yaml
@@ -107,7 +107,7 @@ Next, add the `block` stanza and the first `task`. The first task will be the bi
 
 ## Step 5
 
-Next, add the second task for bigip_pool as demonstrated in [Exercise 1.3 - Adding a load balancing pool](../1.3-add-pool/README.md).
+Next, add the second task for bigip_pool as demonstrated in [Exercise 1.3 - Adding a load balancing pool](../1.3-add-pool/README.html).
 
 {% raw %}
 ```yaml
@@ -148,7 +148,7 @@ Next, add the second task for bigip_pool as demonstrated in [Exercise 1.3 - Addi
 
 ## Step 6
 
-Next, add the third task.  For the third task use the bigip_pool_member as demonstrated in [Exercise 1.4 - Adding members to a pool](../1.4-add-pool-members/README.md).
+Next, add the third task.  For the third task use the bigip_pool_member as demonstrated in [Exercise 1.4 - Adding members to a pool](../1.4-add-pool-members/README.html).
 
 {% raw %}
 ```yaml
@@ -199,7 +199,7 @@ Next, add the third task.  For the third task use the bigip_pool_member as demon
 
 ## Step 7
 
-Next, add the fourth task.  For the fourth task use the bigip_virtual_server as demonstrated in [Exercise 1.5 - Adding a virtual server](../1.5-add-virtual-server/README.md).
+Next, add the fourth task.  For the fourth task use the bigip_virtual_server as demonstrated in [Exercise 1.5 - Adding a virtual server](../1.5-add-virtual-server/README.html).
 
 {% raw %}
 ```yaml
@@ -261,7 +261,7 @@ Next, add the fourth task.  For the fourth task use the bigip_virtual_server as 
 
 ## Step 7
 
-Next, add the **rescue** stanza.  The tasks under the `rescue` stanza will be identical to [Exercise 1.6 - Deleting F5 BIG-IP Configuration](../1.6-delete-configuration/README.md).  The bigip_pool_member task does not need to re-enterered since by deleting the nodes and pool will remove all configuration. If any task within the **block** fails, the **rescue** stanza will execute in order.  The VIP, pool, and nodes will be removed gracefully.
+Next, add the **rescue** stanza.  The tasks under the `rescue` stanza will be identical to [Exercise 1.6 - Deleting F5 BIG-IP Configuration](../1.6-delete-configuration/README.html).  The bigip_pool_member task does not need to re-enterered since by deleting the nodes and pool will remove all configuration. If any task within the **block** fails, the **rescue** stanza will execute in order.  The VIP, pool, and nodes will be removed gracefully.
 
 {% raw %}
 ```yaml
@@ -491,4 +491,4 @@ f5                         : ok=8    changed=6    unreachable=0    failed=1
 
 The finished Ansible Playbook is provided here for an Answer key.  Click here: [bigip-error-handling.yml](https://github.com/network-automation/linklight/blob/master/exercises/ansible_f5/2.2-error-handling/bigip-error-handling.yml).
 
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)

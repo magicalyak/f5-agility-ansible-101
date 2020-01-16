@@ -1,6 +1,6 @@
 # 演習 2.1 - モジュールの組み合わせを使用してBIG-IPの構成を削除する
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -71,7 +71,7 @@
 
 ## Step 4
 
-次に、[bigip_virtual_server](https://docs.ansible.com/ansible/latest/modules/bigip_virtual_server_module.html) を使用してタスクを追加します。このタスクは、[演習 1.5 - virtual server の追加](../1.5-add-virtual-server/README.ja.md) と同じです。 `state:absent` は、F5BIG-IP ロードバランサから構成を削除します。
+次に、[bigip_virtual_server](https://docs.ansible.com/ansible/latest/modules/bigip_virtual_server_module.html) を使用してタスクを追加します。このタスクは、[演習 1.5 - virtual server の追加](../1.5-add-virtual-server/README.ja.html) と同じです。 `state:absent` は、F5BIG-IP ロードバランサから構成を削除します。
 
 {% raw %}
 ``` yaml
@@ -102,7 +102,7 @@
 
 ## Step 5
 
-次に、[bigip_pool](https://docs.ansible.com/ansible/latest/modules/bigip_pool_module.html) を使用して2番目のタスクを追加します。このタスクは[演習 1.3 - プールの追加](../1.3-add-pool/README.ja.md) に **state** パラメーター `absent` をつけたものと同じです。
+次に、[bigip_pool](https://docs.ansible.com/ansible/latest/modules/bigip_pool_module.html) を使用して2番目のタスクを追加します。このタスクは[演習 1.3 - プールの追加](../1.3-add-pool/README.ja.html) に **state** パラメーター `absent` をつけたものと同じです。
 
 {% raw %}
 ```yaml
@@ -138,7 +138,7 @@
 
 ## Step 6
 
-最後に、[bigip_node](https://docs.ansible.com/ansible/latest/modules/bigip_node_module.html) を使用して最後のタスクを追加します。このタスクは、[演習 1.2 - F5 BIG-IP へのノード追加](1.2-add-node/README.ja.md) に **state** パラメーター `absent` をつけたものと同じです。
+最後に、[bigip_node](https://docs.ansible.com/ansible/latest/modules/bigip_node_module.html) を使用して最後のタスクを追加します。このタスクは、[演習 1.2 - F5 BIG-IP へのノード追加](1.2-add-node/README.ja.html) に **state** パラメーター `absent` をつけたものと同じです。
 
 {% raw %}
 ```yaml
@@ -234,4 +234,4 @@ BIG-IPのログイン情報:
 * Local Traffic Manager -> Pool
 * Local Traffic Manager -> Node
 
-本演習は終了です。[Click here to return to the lab guide](../README.ja.md)
+本演習は終了です。[Click here to return to the lab guide](../README.ja.html)

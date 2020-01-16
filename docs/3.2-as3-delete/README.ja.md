@@ -1,6 +1,6 @@
 # 演習 3.2 - Web アプリケーションの削除
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -108,4 +108,4 @@ Web UIにログインして、 `Partition` が削除されていることを確�
 
 --
 
-本演習は終了です。[Click here to return to the lab guide](../README.ja.md)
+本演習は終了です。[Click here to return to the lab guide](../README.ja.html)

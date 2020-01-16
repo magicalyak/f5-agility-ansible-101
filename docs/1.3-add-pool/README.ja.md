@@ -1,6 +1,6 @@
 # 演習 1.3 - プールの追加
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -122,4 +122,4 @@ BIG-IP へのログイン情報:
 画面左のメニューからプールが確認できます。Local Traffic-> Pools とクリックします。
 ![f5pool](pool.png)
 
-これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.md)
+これで本演習は終わりです。[演習ガイドへ戻る](../README.ja.html)

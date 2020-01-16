@@ -1,6 +1,6 @@
 # 演習 1.0 - 演習環境の確認
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 演習を開始する前にぜひ Ansible Slack へ参加してください！(任意)
 
@@ -112,4 +112,4 @@ f5 ansible_host=34.199.128.69 ansible_user=admin private_ip=172.16.26.136 ansibl
 [student1@ansible networking-workshop]$ cd ~
 ```
 
-本演習は以上となります。  [Click here to return to the lab guide](../README.ja.md)
+本演習は以上となります。  [Click here to return to the lab guide](../README.ja.html)

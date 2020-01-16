@@ -1,6 +1,6 @@
 # 演習 2.0 - プールメンバーの無効化
 
-**Read this in other languages**: ![uk](../../../images/uk.png) [English](README.md),  ![japan](../../../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../../../images/uk.png) [English](README.html),  ![japan](../../../images/japan.png) [日本語](README.ja.html).
 
 ## 目次
 
@@ -94,7 +94,7 @@
 
   - LTM Poolのサブセット情報をBIG-IPからファクト情報として取得する
 
-HINT: <a href="../1.1-get-facts/README.ja.md" style="color: #000000">演習 1.1</a>で実施したbigip_device_factsモジュールの利用。
+HINT: <a href="../1.1-get-facts/README.ja.html" style="color: #000000">演習 1.1</a>で実施したbigip_device_factsモジュールの利用。
 
 ## Step 5
 
@@ -120,7 +120,7 @@ HINT: Playbook 内で動的に各ファクト情報を簡易設定する方法�
   - プールに所属しているメンバーを表示
 
 ヒント:
-<a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html" style="color: #000000">debug</a> と <a href="../1.4-add-pool-members/README.ja.md">演習 1.4</a>を参照してください。
+<a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html" style="color: #000000">debug</a> と <a href="../1.4-add-pool-members/README.ja.html">演習 1.4</a>を参照してください。
 
 ## Step 8
 
@@ -204,4 +204,4 @@ f5                         : ok=7    changed=2    unreachable=0    failed=0
 ![f5bigip-gui](f5bigip-gui.png)
 
 --
-この演習はこれで終了です。 [Click here to return to the lab guide](../README.ja.md)
+この演習はこれで終了です。 [Click here to return to the lab guide](../README.ja.html)

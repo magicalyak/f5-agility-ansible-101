@@ -1,6 +1,6 @@
 # Exercise 2.0 - Disabling a pool member
 
-**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
 ## Table of Contents
 
@@ -209,4 +209,4 @@ The solution will be provided by the instructor if you are stuck.  The GUI shoul
 ![f5bigip-gui](f5bigip-gui.png)
 
 --
-You have finished this exercise.  [Click here to return to the lab guide](../README.md)
+You have finished this exercise.  [Click here to return to the lab guide](../README.html)
