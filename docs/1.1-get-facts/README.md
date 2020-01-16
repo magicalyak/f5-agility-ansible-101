@@ -1,11 +1,20 @@
 # Exercise 1.1: Using the bigip_device_info module
 
-**Read this in other languages**: ![uk](../../../images/uk.png) [English](README.md),  ![japan](../../../images/japan.png) [日本語](README.ja.md).
+**Read this in other languages**: ![uk](../images/uk.png) [English](README.md),  ![japan](../images/japan.png) [日本語](README.ja.md).
 
 ## Table of Contents
 
+- [Exercise 1.1: Using the bigip_device_info module](#exercise-11-using-the-bigipdeviceinfo-module)
+  - [Table of Contents](#table-of-contents)
 - [Objective](#objective)
 - [Guide](#guide)
+  - [Step 1:](#step-1)
+  - [Step 2:](#step-2)
+  - [Step 3](#step-3)
+  - [Step 4](#step-4)
+  - [Step 5](#step-5)
+  - [Step 6](#step-6)
+  - [Step 7](#step-7)
 - [Playbook Output](#playbook-output)
 - [Solution](#solution)
 - [Going Further](#going-further)
