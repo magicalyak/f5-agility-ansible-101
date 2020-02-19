@@ -2,26 +2,24 @@
 
 **Read this in other languages**: ![uk](../images/uk.png) [English](README.html),  ![japan](../images/japan.png) [日本語](README.ja.html).
 
-Before you get started, please join us on slack! [Click here to join the ansiblenetwork slack](https://join.slack.com/t/ansiblenetwork/shared_invite/enQtMzEyMTcxMTE5NjM3LWIyMmQ4YzNhYTA4MjA2OTRhZDQzMTZkNWZlN2E3NzhhMWQ5ZTdmNmViNjk2M2JkYzJjODhjMjVjMGUxZjc2MWE).  This will allow you to chat with other network automation engineers and get help after the workshops concludes.
-
 #### Step 1
 
 Navigate to the `networking-workshop` directory.
 
-```
-[student1@ansible ~]$ cd networking-workshop/
-[student1@ansible networking-workshop]$
+```bash
+[centos@ansible ~]$ cd networking-workshop/
+[centos@ansible networking-workshop]$
 ```
 
 #### Step 2
 
 Run the `ansible` command with the `--version` command to look at what is configured:
 
-```
-[student1@ansible networking-workshop]$ ansible --version
+```bash
+[centos@ansible networking-workshop]$ ansible --version
 ansible 2.6.2
-  config file = /home/student1/.ansible.cfg
-  configured module search path = [u'/home/student1/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  config file = /home/centos/.ansible.cfg
+  configured module search path = [u'/home/centos/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
   ansible python module location = /usr/lib/python2.7/site-packages/ansible
   executable location = /usr/bin/ansible
   python version = 2.7.5 (default, May  3 2017, 07:55:04) [GCC 4.8.5 20150623 (Red Hat 4.8.5-14)]
@@ -29,30 +27,28 @@ ansible 2.6.2
 
 > Note: The Ansible version you see might differ from the above output
 
-
 This command gives you information about the version of Ansible, location of the executable, version of Python, search path for the modules and location of the `ansible configuration file`.
 
 #### Step 3
 
 Use the `cat` command to view the contents of the `ansible.cfg` file.
 
-
-```
-[student1@ansible networking-workshop]$ cat ~/.ansible.cfg
+```bash
+[centos@ansible networking-workshop]$ cat ~/.ansible.cfg
 [defaults]
 connection = smart
 timeout = 60
-inventory = /home/student1/networking-workshop/lab_inventory/hosts
+inventory = /home/centos/networking-workshop/lab_inventory/hosts
 host_key_checking = False
-private_key_file = /home/student1/.ssh/aws-private.pem
-[student1@ansible networking-workshop]$
+private_key_file = /home/centos/.ssh/aws-private.pem
+[centos@ansible networking-workshop]$
 
 ```
 
 Note the following parameters within the `ansible.cfg` file:
 
  - `inventory`: shows the location of the ansible inventory being used
- - `private_key_file`: this shows the location of the private key used to login to devices
+ - `private_key_file`: this shows the location of the private key used to login to devices (this won't be present for UDF, we will use the default key)
 
 #### Step 4
 
@@ -60,25 +56,27 @@ The scope of a `play` within a `playbook` is limited to the groups of hosts decl
 
 In this lab you will work with a file based inventory written in the **ini** format. Use the `cat` command to view the contents of your inventory:
 
-`[student1@ansible networking-workshop]$ cat lab_inventory/hosts`
+`[centos@ansible networking-workshop]$ cat lab_inventory/hosts`
 
-The output will look as follows with student2 being the respective student workbench:
-```
+The output will look similar to as follows:
+
+```yaml
 [all:vars]
-ansible_user=student2
-ansible_ssh_pass=ansible
-ansible_port=22
+ansible_user=centos
+ansible_ssh_pass=f5ansible
+ansible_ssh_private_key_file=/home/centos/.ssh/aws-private.pem
 
 [lb]
-f5 ansible_host=34.199.128.69 ansible_user=admin private_ip=172.16.26.136 ansible_ssh_pass=admin
+f5 ansible_host=10.1.1.7 ansible_user=admin private_ip=10.1.1.7 ansible_ssh_pass=f5ansible
 
 [control]
-ansible ansible_host=107.23.192.217 ansible_user=ec2-user private_ip=172.16.207.49
+ansible ansible_host=10.1.1.4 ansible_user=centos
 
 [webservers]
-host1 ansible_host=107.22.141.4 ansible_user=ec2-user private_ip=172.16.170.190
-host2 ansible_host=54.146.162.192 ansible_user=ec2-user private_ip=172.16.160.13
+host1 ansible_host=10.1.1.5 ansible_user=centos
+host2 ansible_host=10.1.1.6 ansible_user=centos
 ```
+
 > Note that the IP addresses will be different in your environment.
 
 #### Step 5
@@ -87,11 +85,10 @@ In the above output every `[ ]` defines a group. For example `[webservers]` is a
 
 > Note: A group called **all** always exists and contains all groups and hosts defined within an inventory.
 
-
 We can associate variables to groups and hosts. Host variables are declared/defined on the same line as the host themselves. For example for the host `f5`:
 
-```
-f5 ansible_host=34.199.128.69 ansible_user=admin private_ip=172.16.26.136 ansible_ssh_pass=admin
+```yaml
+f5 ansible_host=10.1.1.7 ansible_user=admin private_ip=10.1.1.7 ansible_ssh_pass=f5ansible
 ```
 
  - `f5` - The name that Ansible will use.  This can but does not have to rely on DNS
@@ -104,8 +101,8 @@ f5 ansible_host=34.199.128.69 ansible_user=admin private_ip=172.16.26.136 ansibl
 
 Go back to the home directory
 
-```
-[student1@ansible networking-workshop]$ cd ~
+```bash
+[centos@ansible networking-workshop]$ cd ~
 ```
 
 You have finished this exercise.  [Click here to return to the lab guide](../README.html)

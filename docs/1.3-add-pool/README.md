@@ -19,8 +19,8 @@ Demonstrate use of the [BIG-IP pool module](https://docs.ansible.com/ansible/lat
 
 Using your text editor of choice create a new file called `bigip-pool.yml`.
 
-```
-[student1@ansible ~]$ nano bigip-pool.yml
+```bash
+[centos@ansible ~]$ nano bigip-pool.yml
 ```
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
@@ -48,8 +48,6 @@ Do not exit the editor yet.
 
 Next, append the first `task` to above playbook. This task will use the `bigip_pool` module configure the two RHEL web servers as nodes on the BIG-IP F5 load balancer.
 
-<!-- {% raw %} -->
-
 ``` yaml
   tasks:
 
@@ -66,8 +64,6 @@ Next, append the first `task` to above playbook. This task will use the `bigip_p
       monitors: "/Common/http"
       monitor_type: "and_list"
 ```
-
-<!-- {% endraw %} -->
 
 - `name: CREATE POOL` is a user defined description that will display in the terminal output.
 - `bigip_pool:` tells the task which module to use.
@@ -88,16 +84,16 @@ Save the file and exit out of editor
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook bigip-pool.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-pool.yml
 ```
 
 # Playbook Output
 
 The output will look as follows.
 
-```yaml
-[student1@ansible ~]$ ansible-playbook bigip-pool.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-pool.yml
 
 PLAY [BIG-IP SETUP] ************************************************************
 

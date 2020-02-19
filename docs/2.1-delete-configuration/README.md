@@ -18,11 +18,9 @@ Demonstrate use of the different modules to delete the configuration (Nodes/Pool
 
 Using your text editor of choice create a new file called `bigip-delete-configuration.yml`.
 
-{% raw %}
+```bash
+[centos@ansible ~]$ nano bigip-delete-configuration.yml
 ```
-[student1@ansible ~]$ nano bigip-delete-configuration.yml
-```
-{% endraw %}
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
 
@@ -30,7 +28,6 @@ Using your text editor of choice create a new file called `bigip-delete-configur
 
 Enter the following play definition into `bigip-delete-configuration.yml`:
 
-{% raw %}
 ``` yaml
 ---
 - name: BIG-IP SETUP
@@ -38,7 +35,7 @@ Enter the following play definition into `bigip-delete-configuration.yml`:
   connection: local
   gather_facts: false
 ```
-{% endraw %}
+
 - The `---` at the top of the file indicates that this is a YAML file.
 - The `hosts: f5`,  indicates the play is run only on the F5 BIG-IP device
 - `connection: local` tells the Playbook to run locally (rather than SSHing to itself)
@@ -48,8 +45,7 @@ Enter the following play definition into `bigip-delete-configuration.yml`:
 
 Add a tasks section with a set_fact for setting the provider values
 
-{% raw %}
-```
+```yaml
 ---
 - name: BIG-IP SETUP
   hosts: lb
@@ -66,13 +62,11 @@ tasks:
         server_port: "8443"
         validate_certs: "no"
 ```
-{% endraw %}
 
 ## Step 4
 
 Next, add the first `task` using the [bigip_virtual_server](https://docs.ansible.com/ansible/latest/modules/bigip_virtual_server_module.html).  This task will be identical to [Exercise 1.5 - Adding a virtual server](../1.5-add-virtual-server/README.html) with an additional **state** parameter.  The `state: absent` will remove the configuration from the F5 BIG-IP load balancer.
 
-{% raw %}
 ``` yaml
 ---
 - name: BIG-IP SETUP
@@ -86,14 +80,13 @@ Next, add the first `task` using the [bigip_virtual_server](https://docs.ansible
       name: "vip"
       state: absent
 ```
-{% endraw %}
+
 - `state: absent` is a parameter that tells the module to delete the configuration
 
 ## Step 5
 
 Next, add the second `task` using the [bigip_pool](https://docs.ansible.com/ansible/latest/modules/bigip_pool_module.html).  This task will be identical to [Exercise 1.3 - Adding a load balancing pool](../1.3-add-pool/README.html) with an additional **state** parameter set to `absent`.
 
-{% raw %}
 ```yaml
 ---
 - name: BIG-IP SETUP
@@ -115,7 +108,6 @@ Next, add the second `task` using the [bigip_pool](https://docs.ansible.com/ansi
       name: "http_pool"
       state: absent
 ```
-{% endraw %}
 
 ## Step 6
 
@@ -150,24 +142,21 @@ Finally, add the last `task` using the [bigip_node](https://docs.ansible.com/ans
       state: absent
     loop: "{{ groups['webservers'] }}"
 ```
-{% endraw %}
+
 The above playbook will delete the virtual server, then the pool and then the nodes configured in previous exercises.
 
 ## Step 7
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-{% raw %}
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-delete-configuration.yml
 ```
-[student1@ansible ~]$ ansible-playbook bigip-delete-configuration.yml
-```
-{% endraw %}
 
 # Playbook Output
 
-{% raw %}
-```
-[student1@ansible]$ ansible-playbook bigip-delete-configuration.yml
+```bash
+[centos@ansible]$ ansible-playbook bigip-delete-configuration.yml
 
 PLAY [BIG-IP TEARDOWN] **************************************************************************************************************************************
 
@@ -188,7 +177,6 @@ PLAY RECAP *********************************************************************
 f5                         : ok=4    changed=3    unreachable=0    failed=0
 
 ```
-{% endraw %}
 
 # Solution
 

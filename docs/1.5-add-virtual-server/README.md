@@ -19,8 +19,8 @@ Demonstrate use of the [BIG-IP virtual server module](https://docs.ansible.com/a
 
 Using your text editor of choice create a new file called `bigip-virtual-server.yml`.
 
-```
-[student1@ansible ~]$ nano bigip-virtual-server.yml
+```bash
+[centos@ansible ~]$ nano bigip-virtual-server.yml
 ```
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
@@ -50,8 +50,6 @@ Do not exit the editor yet.
 
 Next, append the `task` to above playbook. This task will use the `bigip-virtual-server` to configure a virtual server on the BIG-IP
 
-<!-- {% raw %} -->
-
 ``` yaml
   tasks:
 
@@ -71,8 +69,6 @@ Next, append the `task` to above playbook. This task will use the `bigip-virtual
       pool: "http_pool"
       snat: "Automap"
 ```
-
-<!-- {% endraw %} -->
 
 >A play is a list of tasks. Tasks and modules have a 1:1 correlation.  Ansible modules are reusable, standalone scripts that can be used by the Ansible API, or by the ansible or ansible-playbook programs. They return information to ansible by printing a JSON string to stdout before exiting.
 
@@ -98,14 +94,14 @@ Save the file and exit out of editor
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook bigip-virtual-server.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-virtual-server.yml
 ```
 
 # Playbook Output
 
 ```yaml
-[student1@ansible]$ ansible-playbook bigip-virtual-server.yml
+[centos@ansible]$ ansible-playbook bigip-virtual-server.yml
 
 PLAY [BIG-IP SETUP]*************************************************************
 
@@ -135,7 +131,7 @@ The load balancer virtual server can be found by navigating the menu on the left
 
 ## Verifying the web servers
 
-Each RHEL web server actually already has apache running.  Exercise 1.1 through 1.5 have successfully setup the load balancer for the pool of web servers.  Open up the public IP of the F5 load balancer in your web browser:
+Each Centos web server actually already has apache running.  Exercise 1.1 through 1.5 have successfully setup the load balancer for the pool of web servers.  Open up the public IP of the F5 load balancer in your web browser:
 
 >This time use port 443 instead of 8443, e.g. https://X.X.X.X:443/
 

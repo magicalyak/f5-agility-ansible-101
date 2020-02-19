@@ -19,8 +19,8 @@ Demonstrate use of the [BIG-IP irule module](https://docs.ansible.com/ansible/la
 
 Using your text editor of choice create a new file called `bigip-irule.yml`.
 
-```
-[student1@ansible ~]$ nano bigip-irule.yml
+```bash
+[centos@ansible ~]$ nano bigip-irule.yml
 ```
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
@@ -50,31 +50,32 @@ Save and Exit out of editor.
 
 Create two dummy irules with the names 'irule1' and 'irule2'
 
-```
-[student1@ansible ~]$ nano irule1
+```bash
+[centos@ansible ~]$ nano irule1
 
 when HTTP_REQUEST {
        log local0. "Accessing iRule1"
 }
 
 ```
+
 Save the file
 
-```
-[student1@ansible ~]$ nano irule2
+```bash
+[centos@ansible ~]$ nano irule2
 
 when HTTP_REQUEST {
        log local0. "Accessing iRule2"
 }
 
 ```
+
 Save the file
 
 ## Step 4
 
 Next, re-open `bigip-irule.yml` and add the `task`. This task will use the `bigip-irule` to add irules to the BIG-IP.
 
-{% raw %}
 ``` yaml
   vars:
    irules: ['irule1','irule2']
@@ -94,8 +95,6 @@ Next, re-open `bigip-irule.yml` and add the `task`. This task will use the `bigi
       content: "{{lookup('file','{{item}}')}}"
     with_items: "{{irules}}"
 ```
-{% endraw %}
-
 
 >A play is a list of tasks. Tasks and modules have a 1:1 correlation.  Ansible modules are reusable, standalone scripts that can be used by the Ansible API, or by the ansible or ansible-playbook programs. They return information to ansible by printing a JSON string to stdout before exiting.
 
@@ -119,9 +118,7 @@ Do not exit the file yet.
 
 Next, append the `task` to above playbook. This task will use the `bigip_virtual_server` to add attach the iRules to a Virtual Server on the BIG-IP.
 
-{% raw %}
 ``` yaml
-
     
   - name: ATTACH iRules TO VIRTUAL SERVER
     bigip_virtual_server:
@@ -134,8 +131,6 @@ Next, append the `task` to above playbook. This task will use the `bigip_virtual
       name: "vip"
       irules: "{{irules}}"
 ```
-{% endraw %}
-
 
 - `irules: "{{irules}}` is a list of irules to be attached to the virtual server 'irule1' and 'irule2'
 
@@ -148,14 +143,14 @@ Save the file and exit out of editor.
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook bigip-irule.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-irule.yml
 ```
 
 # Playbook Output
 
 ```yaml
-[student1@ansible]$ ansible-playbook bigip-irule.yml
+[centos@ansible]$ ansible-playbook bigip-irule.yml
 
 PLAY [BIG-IP SETUP] *********************************************************************************************************************************
 

@@ -27,16 +27,16 @@ Demonstrate use of the [BIG-IP Facts module](https://docs.ansible.com/ansible/la
 
 Make sure you are in the home directory
 
-```
-[student1@ansible networking-workshop]$ cd ~
+```bash
+[centos@ansible networking-workshop]$ cd ~
 ```
 
 ## Step 1:
 
 Using your text editor of choice create a new file called `bigip-facts.yml`.
 
-```
-[student1@ansible ~]$ nano bigip-facts.yml
+```bash
+[centos@ansible ~]$ nano bigip-facts.yml
 ```
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
@@ -66,7 +66,6 @@ Do not close editor yet.
 
 Next, add the first `task`. This task will use the `bigip_device_info` module to grab useful information from the BIG-IP device.
 
-{% raw %}
 ``` yaml
   tasks:
 
@@ -82,7 +81,6 @@ Next, add the first `task`. This task will use the `bigip_device_info` module to
           validate_certs: no
       register: device_facts
 ```
-{% endraw %}
 
 >A play is a list of tasks. Tasks and modules have a 1:1 correlation.  Ansible modules are reusable, standalone scripts that can be used by the Ansible API, or by the ansible or ansible-playbook programs. They return information to ansible by printing a JSON string to stdout before exiting.
 
@@ -100,13 +98,11 @@ Next, add the first `task`. This task will use the `bigip_device_info` module to
 
 Next, append the second `task` to above . This task will use the `debug` module to print the output from device_facts variable we registered the facts to.
 
-{% raw %}
 ```yaml
     - name: DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION
       debug:
         var: device_facts
 ```
-{% endraw %}
 
 - The `name: COMPLETE BIG-IP SYSTEM INFORMATION` is a user defined description that will display in the terminal output.
 - `debug:` tells the task to use the debug module.
@@ -119,92 +115,74 @@ Save the file and exit out of editor.
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook bigip-facts.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-facts.yml
 ```
 
 The output will look as follows.
-``` yaml
-[student1@ansible ~]$ ansible-playbook bigip-facts.yml
 
-PLAY [GRAB F5 FACTS] 
-****************************************************************
-TASK [Set a fact named 'provider' with BIG-IP login information] 
-****************************************************************
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-facts.yml 
+
+PLAY [GRAB F5 FACTS] *****************************************************************************************************************************************
+
+TASK [COLLECT BIG-IP FACTS] **********************************************************************************************************************************
 ok: [f5]
 
-TASK [COLLECT BIG-IP FACTS] 
-****************************************************************
-changed: [f5]
-
-TASK [DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION] 
-****************************************************************
-
-ok: [f5] =>
+TASK [DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION] ************************************************************************************************************
+ok: [f5] => 
   device_facts:
     ansible_facts:
       discovered_interpreter_python: /usr/bin/python
-    changed: true
+    changed: false
     failed: false
-
+    queried: true
     system_info:
-      base_mac_address: 02:f1:92:e9:a2:38
-      chassis_serial: 4eae2aec-f538-c80b-b48ce7466d8f
+      base_mac_address: 06:95:66:ab:b6:1c
+      chassis_serial: a2ad2fec-c283-2cc9-3610e7425914
       hardware_information:
-      - model: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+      - model: Intel(R) Xeon(R) CPU E5-2666 v3 @ 2.90GHz
         name: cpus
         type: base-board
         versions:
         - name: cpu stepping
-          version: '1'
+          version: '2'
         - name: cpu sockets
           version: '1'
         - name: cpu MHz
-          version: '2294.944'
+          version: '2900.042'
         - name: cores
-          version: 2  (physical:2)
+          version: 8  (physical:4)
         - name: cache size
-          version: 46080 KB
+          version: 25600 KB
       marketing_name: BIG-IP Virtual Edition
-      package_edition: Point Release 7
-      package_version: Build 0.0.1 - Tue May 15 15:26:30 PDT 2018
+      package_edition: Final
+      package_version: Build 0.0.11 - Fri Aug  2 21:38:03 PDT 2019
       platform: Z100
-      product_build: 0.0.1
-      product_build_date: Tue May 15 15:26:30 PDT 2018
-      product_built: 180515152630
-      product_changelist: 2557198
+      product_build: 0.0.11
+      product_build_date: Fri Aug  2 21:38:03 PDT 2019
+      product_built: 190802213803
+      product_changelist: 3115640
       product_code: BIG-IP
-      product_jobid: 1012030
-      product_version: 13.1.0.7
+      product_jobid: 1128587
+      product_version: 15.0.1
       time:
-        day: 28
-        hour: 18
-        minute: 38
-        month: 10
-        second: 42
-        year: 2019
-      uptime: 8196900.0
+        day: 19
+        hour: 15
+        minute: 41
+        month: 2
+        second: 1
+        year: 2020
+      uptime: 9380.0
 
-TASK [DISPLAY ONLY THE MAC ADDRESS] 
-****************************************************************
-ok: [f5] =>
-  device_facts['system_info']['base_mac_address']: 02:f1:92:e9:a2:38
-
-TASK [DISPLAY ONLY THE VERSION] 
-****************************************************************
-ok: [f5] =>
-  device_facts['system_info']['product_version']: 13.1.0.7
-
-PLAY RECAP 
-****************************************************************
-f5                         : ok=4    changed=1    unreachable=0    failed=0
+PLAY RECAP ***************************************************************************************************************************************************
+f5                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
 ## Step 6
 
 Finally let's append two more tasks to get more specific info from facts gathered, to the above playbook.
 
-{% raw %}
 ```yaml
 
     - name: DISPLAY ONLY THE MAC ADDRESS
@@ -215,7 +193,6 @@ Finally let's append two more tasks to get more specific info from facts gathere
       debug:
         var: device_facts['system_info']['product_version']
 ```
-{% endraw %}
 
 
 - `var: device_facts['system_info']['base_mac_address']` displays the MAC address for  the Management IP on the BIG-IP device
@@ -228,100 +205,79 @@ Finally let's append two more tasks to get more specific info from facts gathere
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook bigip-facts.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-facts.yml
 ```
 
 # Playbook Output
 
 The output will look as follows.
 
-{% raw %}
-```yaml
-[student1@ansible ~]$ ansible-playbook bigip-facts.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-facts.yml 
 
-PLAY [GRAB F5 FACTS] ****************************************************************************************************************************************
+PLAY [GRAB F5 FACTS] *****************************************************************************************************************************************
 
-TASK [COLLECT BIG-IP FACTS] *********************************************************************************************************************************
-changed: [f5]
+TASK [COLLECT BIG-IP FACTS] **********************************************************************************************************************************
+ok: [f5]
 
-TASK [DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION] ***********************************************************************************************************
-ok: [f5] => {
-    "device_facts": {
-        "changed": true,
-        "failed": false,
-        "system_info": {
-            "base_mac_address": "0a:54:53:51:86:fc",
-            "chassis_serial": "685023ec-071e-3fa0-3849dcf70dff",
-            "hardware_information": [
-                {
-                    "model": "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz",
-                    "name": "cpus",
-                    "type": "base-board",
-                    "versions": [
-                        {
-                            "name": "cpu stepping",
-                            "version": "2"
-                        },
-                        {
-                            "name": "cpu sockets",
-                            "version": "1"
-                        },
-                        {
-                            "name": "cpu MHz",
-                            "version": "2399.981"
-                        },
-                        {
-                            "name": "cores",
-                            "version": "2  (physical:2)"
-                        },
-                        {
-                            "name": "cache size",
-                            "version": "30720 KB"
-                        }
-                    ]
-                }
-            ],
-            "marketing_name": "BIG-IP Virtual Edition",
-            "package_edition": "Point Release 7",
-            "package_version": "Build 0.0.1 - Tue May 15 15:26:30 PDT 2018",
-            "platform": "Z100",
-            "product_build": "0.0.1",
-            "product_build_date": "Tue May 15 15:26:30 PDT 2018",
-            "product_built": 180515152630,
-            "product_changelist": 2557198,
-            "product_code": "BIG-IP",
-            "product_jobid": 1012030,
-            "product_version": "13.1.0.7",
-            "time": {
-                "day": 15,
-                "hour": 23,
-                "minute": 46,
-                "month": 4,
-                "second": 25,
-                "year": 2019
-            },
-            "uptime": 1738.0
-        }
-    }
-}
+TASK [DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION] ************************************************************************************************************
+ok: [f5] => 
+  device_facts:
+    ansible_facts:
+      discovered_interpreter_python: /usr/bin/python
+    changed: false
+    failed: false
+    queried: true
+    system_info:
+      base_mac_address: 06:95:66:ab:b6:1c
+      chassis_serial: a2ad2fec-c283-2cc9-3610e7425914
+      hardware_information:
+      - model: Intel(R) Xeon(R) CPU E5-2666 v3 @ 2.90GHz
+        name: cpus
+        type: base-board
+        versions:
+        - name: cpu stepping
+          version: '2'
+        - name: cpu sockets
+          version: '1'
+        - name: cpu MHz
+          version: '2900.042'
+        - name: cores
+          version: 8  (physical:4)
+        - name: cache size
+          version: 25600 KB
+      marketing_name: BIG-IP Virtual Edition
+      package_edition: Final
+      package_version: Build 0.0.11 - Fri Aug  2 21:38:03 PDT 2019
+      platform: Z100
+      product_build: 0.0.11
+      product_build_date: Fri Aug  2 21:38:03 PDT 2019
+      product_built: 190802213803
+      product_changelist: 3115640
+      product_code: BIG-IP
+      product_jobid: 1128587
+      product_version: 15.0.1
+      time:
+        day: 19
+        hour: 15
+        minute: 42
+        month: 2
+        second: 4
+        year: 2020
+      uptime: 9443.0
 
-TASK [DISPLAY ONLY THE MAC ADDRESS] *************************************************************************************************************************
-ok: [f5] => {
-    "device_facts['system_info']['base_mac_address']": "0a:54:53:51:86:fc"
-}
+TASK [DISPLAY ONLY THE MAC ADDRESS] **************************************************************************************************************************
+ok: [f5] => 
+  device_facts['system_info']['base_mac_address']: 06:95:66:ab:b6:1c
 
-TASK [DISPLAY ONLY THE VERSION] *****************************************************************************************************************************
-ok: [f5] => {
-    "device_facts['system_info']['product_version']": "13.1.0.7"
-}
+TASK [DISPLAY ONLY THE VERSION] ******************************************************************************************************************************
+ok: [f5] => 
+  device_facts['system_info']['product_version']: 15.0.1
 
-PLAY RECAP **************************************************************************************************************************************************
-f5                         : ok=4    changed=1    unreachable=0    failed=0
-
+PLAY RECAP ***************************************************************************************************************************************************
+f5                         : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
-{% endraw %}
-
 
 # Solution
 
@@ -340,7 +296,7 @@ For this bonus exercise add the `tags: debug` paramteter (at the task level) to 
 
 Now re-run the playbook with the `--skip-tags-debug` command line option.
 
-```
+```bash
 ansible-playbook bigip-facts.yml --skip-tags=debug
 ```
 

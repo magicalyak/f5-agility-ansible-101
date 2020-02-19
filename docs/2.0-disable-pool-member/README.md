@@ -27,11 +27,9 @@ Demonstrate the removal of a node from the pool.  Build a Playbook that:
 
 Using your text editor of choice create a new file called `disable-pool-member.yml`.
 
-<!-- {% raw %} -->
+```bash
+[centos@ansible ~]$ nano disable-pool-member.yml
 ```
-[student1@ansible ~]$ nano disable-pool-member.yml
-```
-<!-- {% endraw %} -->
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
 
@@ -39,7 +37,6 @@ Using your text editor of choice create a new file called `disable-pool-member.y
 
 Enter the following play definition into `disable-pool-member.yml`:
 
-<!-- {% raw %} -->
 ``` yaml
 ---
 
@@ -49,14 +46,12 @@ Enter the following play definition into `disable-pool-member.yml`:
   gather_facts: false
 
 ```
-<!-- {% endraw %} -->
 
 ## Step 3
 
 Add a tasks section and then set a fact for the provider. Once you set the provider you can re-use this key in future tasks instead of giving the server/user/password/server_port and validate_certs info to each task.
 
-<!-- {% raw %} -->
-```
+```yaml
 ---
 - name: "Disabling a pool member"
   hosts: lb
@@ -73,22 +68,19 @@ Add a tasks section and then set a fact for the provider. Once you set the provi
       server_port: "8443"
       validate_certs: "no"
 ```
-<!-- {% endraw %} -->
 
 Now in the next task you can use provider as follows:
 
-<!-- {% raw %} -->
-```
+```yaml
 bigip_device_info:
   provider: "{{provider}}"
   gather_subset:
   - ltm-pools
 ```
-<!-- {% endraw %} -->
 
 You DO NOT need to pass the server_ip/user/password etc. for each module going forward
 
-```
+```yaml
 ---
 - name: "Disabling a pool member"
   hosts: lb
@@ -148,17 +140,16 @@ Remember to use <a href="https://docs.ansible.com/ansible/latest/user_guide/play
 ## Step 10
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook disable-pool-member.yml
+```bash
+[centos@ansible ~]$ ansible-playbook disable-pool-member.yml
 ```
 
 # Playbook Output
 
 The output will look as follows.
 
-<!-- {% raw %} -->
 ```yaml
-[student1@ansible ~]$ ansible-playbook disable-pool-member.yml
+[centos@ansible ~]$ ansible-playbook disable-pool-member.yml
 
 PLAY [Disabling a pool member] ******************************************************************************************************************************
 
@@ -201,7 +192,6 @@ changed: [f5]
 PLAY RECAP **************************************************************************************************************
 f5                         : ok=7    changed=2    unreachable=0    failed=0
 ```
-<!-- {% endraw %} -->
 
 # Solution
 The solution will be provided by the instructor if you are stuck.  The GUI should show something similar to the following with a black diamond indicating the specified node was forced offline.

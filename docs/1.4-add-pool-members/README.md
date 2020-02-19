@@ -19,7 +19,7 @@ Demonstrate use of the [BIG-IP pool member module](https://docs.ansible.com/ansi
 
 Using your text editor of choice create a new file called `bigip-pool-members.yml`.
 
-```
+```bash
 [student1@ansible ~]$ nano bigip-pool-members.yml
 ```
 
@@ -48,7 +48,6 @@ Do not exit the editor yet.
 
 Next, append the first `task` to above playbook. This task will use the `bigip_pool_member` module configure the two RHEL web servers as nodes on the BIG-IP F5 load balancer.
 
-{% raw %}
 ``` yaml
   tasks:
 
@@ -67,8 +66,6 @@ Next, append the first `task` to above playbook. This task will use the `bigip_p
       pool: "http_pool"
     loop: "{{ groups['webservers'] }}"
 ```
-{% endraw %}
-
 
 Explanation of each line within the task:
 - `name: ADD POOL MEMBERS` is a user defined description that will display in the terminal output.
@@ -95,7 +92,7 @@ Save the file and exit out of editor.
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
+```bash
 [student1@ansible ~]$ ansible-playbook bigip-pool-members.yml
 ```
 
@@ -115,16 +112,17 @@ changed: [f5] => (item=host2)
 PLAY RECAP *********************************************************************
 f5                         : ok=1    changed=1    unreachable=0    failed=0
 ```
+
 # Output parsing
 
 Let's use the bigip_device_info to collect the pool members on BIG-IP. [JSON query](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#json-query-filter) is a powerful filter that can be used. Please go through before proceeding
 
-{% raw %}
-```
+```bash
 [student1@ansible ~]$ nano display-pool-members.yml
 ```
 
 Enter the following:
+
 ```yaml
 ---
 - name: "List pool members"
@@ -136,11 +134,12 @@ Enter the following:
 
   - name: Query BIG-IP facts
     bigip_device_info:
-      server: "{{private_ip}}"
-      user: "{{ansible_user}}"
-      password: "{{ansible_ssh_pass}}"
-      server_port: "8443"
-      validate_certs: "no"
+      provider:
+        server: "{{private_ip}}"
+        user: "{{ansible_user}}"
+        password: "{{ansible_ssh_pass}}"
+        server_port: 8443
+        validate_certs: "no"
       gather_subset:
        - ltm-pools
     register: bigip_device_facts
@@ -154,14 +153,14 @@ Enter the following:
     vars:
      query_string: "[?name=='http_pool'].members[*].name[]"
 ```
-{% endraw %}
 
 - `vars:` in the module is defining a variable query_string to be used within the module itself
 - `query_String` will have the name of all members from pool name 'http_pool'. query_string is defined to make it easier to read the
    entire json string
 
 Execute the playbook
-```
+
+```bash
 [student1@ansible ~]$ ansible-playbook display-pool-members.yml
 ```
 

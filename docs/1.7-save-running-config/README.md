@@ -25,8 +25,8 @@ Demonstrate use of the [BIG-IP config module](https://docs.ansible.com/ansible/l
 
 Using your text editor of choice create a new file called `bigip-config.yml`.
 
-```
-[student1@ansible ~]$ nano bigip-config.yml
+```bash
+[centos@ansible ~]$ nano bigip-config.yml
 ```
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
@@ -56,7 +56,6 @@ Do not exit the editor yet.
 
 Next, add the `task`. This task will use the `bigip-config` to save the running configuration to disk
 
-{% raw %}
 ``` yaml
   tasks:
 
@@ -70,8 +69,6 @@ Next, add the `task`. This task will use the `bigip-config` to save the running 
         validate_certs: no
       save: yes
 ```
-{% endraw %}
-
 
 >A play is a list of tasks. Tasks and modules have a 1:1 correlation.  Ansible modules are reusable, standalone scripts that can be used by the Ansible API, or by the ansible or ansible-playbook programs. They return information to ansible by printing a JSON string to stdout before exiting.
 
@@ -93,14 +90,14 @@ Save File and exit out of editor.
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook bigip-config.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-config.yml
 ```
 
 # Playbook Output
 
 ```yaml
-[student1@ansible]$ ansible-playbook bigip-config.yml
+[centos@ansible]$ ansible-playbook bigip-config.yml
 
 PLAY [BIG-IP SETUP] ************************************************************************************************************************
 

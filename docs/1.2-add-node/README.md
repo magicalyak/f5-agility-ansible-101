@@ -19,8 +19,8 @@ Demonstrate use of the [BIG-IP node module](https://docs.ansible.com/ansible/lat
 
 Using your text editor of choice create a new file called `bigip-node.yml`.
 
-```
-[student1@ansible ~]$ nano bigip-node.yml
+```bash
+[centos@ansible ~]$ nano bigip-node.yml
 ```
 
 >`vim` and `nano` are available on the control node, as well as Visual Studio and Atom via RDP
@@ -48,7 +48,6 @@ Do not close the editor yet.
 
 Next, append the first `task` to above playbook. This task will use the `bigip_node` module configure the two RHEL web servers as nodes on the BIG-IP F5 load balancer.
 
-<!-- {% raw %} -->
 ``` yaml
   tasks:
 
@@ -64,7 +63,6 @@ Next, append the first `task` to above playbook. This task will use the `bigip_n
       name: "{{hostvars[item].inventory_hostname}}"
     loop: "{{ groups['webservers'] }}"
 ```
-<!-- {% endraw %} -->
 
 >A [loop](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html) will repeat a task on a list provided to the task.  In this case it will loop twice, once for each of the two web servers.
 
@@ -86,8 +84,8 @@ Save the file and exit out of editor.
 
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook bigip-node.yml
+```bash
+[centos@ansible ~]$ ansible-playbook bigip-node.yml
 ```
 
 # Playbook Output
@@ -95,7 +93,7 @@ Run the playbook - exit back into the command line of the control host and execu
 The output will look as follows.
 
 ```yaml
-[student1@ansible]$ ansible-playbook bigip-node.yml
+[centos@ansible]$ ansible-playbook bigip-node.yml
 
 PLAY [BIG-IP SETUP] ************************************************************
 
