@@ -45,34 +45,30 @@ Using your text editor of choice open the existing jinja template `as3_template.
 Find where the port **443** is and modify it to port **80**.
 
 The line looks as follows->
-{% raw %}
-``` json
+
+```json
                 "servicePort": 443,
 ```
-{% endraw %}
 
 change it to->
 
-{% raw %}
-``` json
+```json
                 "servicePort": 80,
 ```
-{% endraw %}
 
 ## Step 4
 Run the playbook - exit back into the command line of the control host and execute the following:
 
-```
-[student1@ansible ~]$ ansible-playbook as3.yml
+```bash
+[centos@ansible ~]$ ansible-playbook as3.yml
 ```
 
 # Playbook Output
 
 The output will look as follows.
 
-{% raw %}
-```yaml
-[student1@ansible ~]$ ansible-playbook as3.yml
+```bash
+[centos@ansible ~]$ ansible-playbook as3.yml
 
 PLAY [Linklight AS3] ***********************************************************
 
@@ -85,7 +81,6 @@ ok: [f5 -> localhost]
 PLAY RECAP *********************************************************************
 f5                         : ok=2    changed=0    unreachable=0    failed=0
 ```
-{% endraw %}
 
 # Solution
 
